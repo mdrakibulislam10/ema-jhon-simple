@@ -13,15 +13,20 @@ const Shop = () => {
 
     return (
         <div className="shop-container">
-            <div className='product-container'>
-                <h2>Products coming here!!!{products.length}</h2>
-                {
-                    products.map(product => <Product product={product}></Product>)
-                }
+            <div>
+                {/* <h2>Products coming here!!! {products.length}</h2> */}
+                <div className='product-container'>
+                    {
+                        products.map(product => <Product
+                            product={product}
+                            key={product.id}
+                        ></Product>)
+                    }
+                </div>
             </div>
 
             <div className='cart-container'>
-                <h3>Order Summary</h3>
+                <h3 style={{ textAlign: "center" }}>Order Summary</h3>
             </div>
         </div>
     );
