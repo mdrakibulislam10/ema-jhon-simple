@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Product = (props) => {
-    console.log(props.handleAddToCart);
+    // console.log(props);
     const { img, name, price, ratings, seller, } = props.product;
-    const handleAddToCart = props.handleAddToCart; // handleAddToCart is handler function, func tai ekhane chole asbe arki; destructuring without {}.
+    // const handleAddToCart = props.handleAddToCart; // handleAddToCart is handler function, select with (.) notation.
+    const { handleAddToCart } = props; // select with destructuring.
 
     // const handleAddToCart = (product) => {
     //     console.log(product);

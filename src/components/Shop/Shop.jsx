@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import "./Shop.css";
 
@@ -36,17 +37,7 @@ const Shop = () => {
             </div>
 
             <div className='cart-container'>
-                <h3 style={{ textAlign: "center" }}>Order Summary</h3>
-                <p>Selected Items: {cart.length}</p>
-                <p>Total Price: ${ }</p>
-                <p>Total Shipping Charge: ${ }</p>
-                <p>Tax: ${ }</p>
-                <h3>Grand Total: ${ }</h3>
-                <div>
-                    <button>Clear Cart</button>
-                    <br />
-                    <button>Review Cart</button>
-                </div>
+                <Cart cart={cart}></Cart>
             </div>
         </div>
     );
