@@ -18,7 +18,7 @@ const Shop = () => {
         // cart.push(product); // don't do this
         const newCart = [...cart, product];
         setCart(newCart);
-    }
+    };
 
     return (
         <div className="shop-container">
