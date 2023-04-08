@@ -4,7 +4,7 @@ import "./Cart.css";
 const Cart = ({ cart }) => {
     // const cart = props.cart; // dot notation
     // const { cart } = props; // destructuring
-    console.log(cart);
+    // console.log(cart);
 
     // total price
     let totalPrice = 0;

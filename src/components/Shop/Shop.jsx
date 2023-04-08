@@ -34,7 +34,7 @@ const Shop = () => {
             // console.log(addedProduct);
             // step 5: set the cart
             setCart(saveCart);
-            console.log(saveCart);
+            // console.log(saveCart);
         }
     }, [products]); // get products after finished load data
 
@@ -82,7 +82,9 @@ const Shop = () => {
             </div>
 
             <div className='cart-container'>
-                <Cart cart={cart}></Cart>
+                <Cart
+                    cart={cart}
+                ></Cart>
             </div>
         </div>
     );
