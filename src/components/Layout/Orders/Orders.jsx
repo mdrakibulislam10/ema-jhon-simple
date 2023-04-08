@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Cart from '../../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ReviewItem from '../../ReviewItem/ReviewItem';
 import "./Orders.css";
-import { removeFromDb } from '../../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 
 const Orders = () => {
     const saveCart = useLoaderData();
@@ -15,6 +17,11 @@ const Orders = () => {
         const remaining = cart.filter(product => product.id !== id);
         setCart(remaining);
         removeFromDb(id);
+    };
+
+    const handlerClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
     };
 
     return (
@@ -33,7 +40,14 @@ const Orders = () => {
             <div className='cart-container'>
                 <Cart
                     cart={cart}
-                ></Cart>
+                    handlerClearCart={handlerClearCart}
+                >
+                    <Link to={"/checkout"}>
+                        <button className='btn-proceed'>Proceed checkout
+                            <FontAwesomeIcon icon={faShoppingBag} />
+                        </button>
+                    </Link>
+                </Cart>
             </div>
         </div>
     );

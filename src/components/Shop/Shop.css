@@ -16,3 +16,12 @@
     background: rgba(255, 153, 0, 0.3);
     /* text-align: center; */
 }
+
+.btn-proceed {
+    background-color: yellow;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
